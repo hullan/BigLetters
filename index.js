@@ -1,35 +1,14 @@
 const express = require('express');
 const app = express();
 
-const A =
-  [[false, false, true, false, false],
-  [false, true, false, true, false],
-  [true, false, false, false, true],
-  [true, true, true, true, true],
-  [true, false, false, false, true],
-  [true, false, false, false, true],
-  [true, false, false, false, true]];
-
-const B =
-  [[true, true, true, true, false],
-  [true, false, false, false, true],
-  [true, false, false, false, true],
-  [true, true, true, true, true],
-  [true, false, false, false, true],
-  [true, false, false, false, true],
-  [true, true, true, true, false]];
-
-const LETTERS = {
-  A: A,
-  B: B
-};
+const {LETTERS} = require('./letters.js');
 
 app.get('/', (req, res) => {
   res.send(printLetter(LETTERS.A));
 });
 
 app.listen(3000, () => {
-  console.log(printPhrase('ABABABB'));
+  console.log(printPhrase('ZZ'));
 });
 
 function printChar(element, char) {
